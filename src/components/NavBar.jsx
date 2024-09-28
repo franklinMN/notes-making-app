@@ -1,58 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./NavBar.css";
+import { DataContext } from "../services/DataContext";
 
 const NavBar = () => {
+  const sortedData = useContext(DataContext);
+
+  const uniqueTags = Array.from(
+    new Set(sortedData.flatMap((note) => note.tags))
+  ).sort();
+
   return (
     <div className="navbar">
       <div className="navbarlist">
-        <a href="#home" className="nav-item">
-          Home
-        </a>
-        <a href="#services" className="nav-item">
-          Services
-        </a>
-        <a href="#about" className="nav-item">
-          About
-        </a>
-        <a href="#contact" className="nav-item">
-          Contact
-        </a>
-        <a href="#buy" className="nav-item">
-          Buy
-        </a>
-        <a href="#sell" className="nav-item">
-          Sell
-        </a>
-        <a href="#birthday" className="nav-item">
-          Birthday
-        </a>
-        <a href="#remainders" className="nav-item">
-          Remainders
-        </a>
-        <a href="#home" className="nav-item">
-          Home
-        </a>
-        <a href="#services" className="nav-item">
-          Services
-        </a>
-        <a href="#about" className="nav-item">
-          About
-        </a>
-        <a href="#contact" className="nav-item">
-          Contact
-        </a>
-        <a href="#buy" className="nav-item">
-          Buy
-        </a>
-        <a href="#sell" className="nav-item">
-          Sell
-        </a>
-        <a href="#birthday" className="nav-item">
-          Birthday
-        </a>
-        <a href="#remainders" className="nav-item">
-          Remainders
-        </a>
+        {uniqueTags.map((tag, index) => (
+          <a key={index} href={`#${tag}`} className="nav-item">
+            {tag}
+          </a>
+        ))}
       </div>
     </div>
   );

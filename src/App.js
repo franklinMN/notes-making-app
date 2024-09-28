@@ -1,10 +1,13 @@
 import "./App.css";
 import MainPage from "./pages/MainPage";
+import { DataProvider } from "./services/DataContext";
 
 function App() {
   return (
     <>
-      <MainPage />
+      <DataProvider>
+        <MainPage />
+      </DataProvider>
     </>
   );
 }

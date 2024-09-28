@@ -1,29 +1,32 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./MainSection.css";
 import TakeNote from "./TakeNote";
 import Cards from "./Cards";
-import { useEffect, useState } from "react";
-import { fetchData } from "../services/noteService";
+// import { useEffect, useState } from "react";
+// import { fetchData } from "../services/noteService";
+import { DataContext } from "../services/DataContext";
 
 const MainSection = () => {
-  const [notes, setNotes] = useState([]);
+  // const [notes, setNotes] = useState([]);
 
-  useEffect(() => {
-    const loadNotes = async () => {
-      try {
-        const notesData = await fetchData();
-        setNotes(notesData);
-      } catch (error) {
-        console.error("Error loading notes:", error);
-      }
-    };
+  // useEffect(() => {
+  //   const loadNotes = async () => {
+  //     try {
+  //       const notesData = await fetchData();
+  //       setNotes(notesData);
+  //     } catch (error) {
+  //       console.error("Error loading notes:", error);
+  //     }
+  //   };
 
-    loadNotes();
-  }, []);
+  //   loadNotes();
+  // }, []);
 
-  const sortedNotes = [...notes].sort(
-    (a, b) => new Date(b.updatedDate) - new Date(a.updatedDate)
-  );
+  // const sortedNotes = [...notes].sort(
+  //   (a, b) => new Date(b.updatedDate) - new Date(a.updatedDate)
+  // );
+
+  const sortedNotes = useContext(DataContext);
 
   return (
     <div className="mainsection-container">
