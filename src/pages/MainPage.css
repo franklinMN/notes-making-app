@@ -1,0 +1,13 @@
+.mainpage {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    /* Full viewport height */
+}
+
+.main-container {
+    display: flex;
+    flex: 1;
+    /* Takes the remaining height after the header */
+    overflow: hidden;
+}

@@ -1,0 +1,44 @@
+.navbar {
+    height: 100%;
+    /* Full-height */
+    width: 250px;
+    /* Width of the sidebar */
+    position: relative;
+    /* Fixed Sidebar (stay in place) */
+    top: 0;
+    left: 0;
+    background-color: #13007c;
+    padding: 0;
+    overflow-y: scroll;
+
+}
+
+/* .navbar .nav-item {
+    padding: 10px 20px;
+    text-align: left;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+} */
+
+.navbarlist {
+    height: 100%;
+    width: 100%;
+    /* overflow: scroll; */
+
+}
+
+.navbar .navbarlist .nav-item {
+    display: block;
+    width: 100%;
+    height: 50px;
+    padding: 15px;
+    text-decoration: none;
+    color: white;
+}
+
+.navbar .navbarlist .nav-item:hover {
+    background-color: #664bff;
+}

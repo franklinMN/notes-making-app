@@ -1,0 +1,27 @@
+.mainsection-container {
+    flex: 1;
+    padding: 20px;
+    background-color: #f4f4f4;
+    overflow: scroll;
+}
+
+.takenote-container .cardsholder-container {
+    width: 100%;
+
+}
+
+.takenote-container {
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.cardsholder-container {
+    padding: 20px 0;
+    gap: 20px;
+    background-color: rgb(67, 127, 240);
+    display: flex;
+    flex-wrap: wrap;
+
+}
