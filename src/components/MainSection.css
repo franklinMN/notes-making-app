@@ -1,8 +1,8 @@
 .mainsection-container {
     flex: 1;
     padding: 20px;
-    background-color: #f4f4f4;
-    overflow: scroll;
+    background-color: #faf9ff;
+    overflow-y: scroll;
 }
 
 .takenote-container .cardsholder-container {
@@ -20,8 +20,9 @@
 .cardsholder-container {
     padding: 20px 0;
     gap: 20px;
-    background-color: rgb(67, 127, 240);
+
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 
 }

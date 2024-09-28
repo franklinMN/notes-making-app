@@ -19,7 +19,7 @@ const Header = () => {
   return (
     <div className="header">
       <div className="menubox">
-        <i class="fa-solid fa-bars fa-2x"></i>
+        <i className="fa-solid fa-bars fa-2x"></i>
       </div>
 
       <div className="logobox">
