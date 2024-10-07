@@ -3,19 +3,27 @@ import "./NavBar.css";
 import { DataContext } from "../services/DataContext";
 
 const NavBar = () => {
-  const sortedData = useContext(DataContext);
+  const { setSelectedTag } = useContext(DataContext);
+  const { uniqueTags } = useContext(DataContext);
 
-  const uniqueTags = Array.from(
-    new Set(sortedData.flatMap((note) => note.tags))
-  ).sort();
+  // const uniqueTags = Array.from(
+  //   new Set(data.flatMap((note) => note.tags))
+  // ).sort();
 
   return (
     <div className="navbar">
       <div className="navbarlist">
+        <button onClick={() => setSelectedTag(null)} className="nav-item">
+          All Notes
+        </button>
         {uniqueTags.map((tag, index) => (
-          <a key={index} href={`#${tag}`} className="nav-item">
+          <button
+            key={index}
+            onClick={() => setSelectedTag(tag)}
+            className="nav-item"
+          >
             {tag}
-          </a>
+          </button>
         ))}
       </div>
     </div>

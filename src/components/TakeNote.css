@@ -4,6 +4,12 @@
     border: 2px solid blue;
     border-radius: 15px;
     background-color: white;
+    position: absolute;
+    overflow-y: auto;
+
+    /* Create a positioning context */
+    z-index: 1;
+
 }
 
 .takenote * {
@@ -28,6 +34,8 @@
 
 #card-notes {
     cursor: text;
+    overflow-y: auto;
+    word-wrap: break-word
 }
 
 .button {
@@ -55,6 +63,22 @@
     background-color: rgb(255, 255, 255);
 }
 
+
+
+form label {
+    margin-right: 10px;
+}
+
+.fa-circle-plus {
+    color: blue;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+
+}
+
 .tags {
     display: flex;
     flex-wrap: wrap;
@@ -69,10 +93,56 @@
     border-radius: 20px;
 }
 
-form label {
-    margin-right: 10px;
+.addtags-container {
+    width: 200px;
+    background-color: aliceblue;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 300px;
+    overflow-y: scroll;
+    position: static;
+    z-index: 1;
+
 }
 
-.fa-circle-plus {
-    color: blue;
+
+#newtag {
+
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+    font-size: 0.8rem;
+    border: none;
+}
+
+.existing-tags label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    /* Optional: Adds spacing between the checkbox and the label text */
+}
+
+.existing-tags .tag-label {
+    display: flex;
+    width: 100%;
+    height: 30px;
+
+}
+
+
+.color-container {
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+
+}
+
+.colorBox {
+    background-color: blue;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 20px;
+    border: 1px solid black;
 }

@@ -1,0 +1,18 @@
+.offline-notice {
+    background-color: #f44336;
+    /* Red */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    /* Horizontally center the text */
+    align-items: center;
+    /* Vertically center the text */
+    height: 50px;
+    /* Set a height for the div */
+}

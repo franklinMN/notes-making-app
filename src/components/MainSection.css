@@ -3,10 +3,7 @@
     padding: 20px;
     background-color: #faf9ff;
     overflow-y: scroll;
-}
-
-.takenote-container .cardsholder-container {
-    width: 100%;
+    position: relative;
 
 }
 
@@ -15,14 +12,18 @@
     display: flex;
     justify-content: center;
     padding: 10px;
+    overflow-y: hidden;
+    height: 300px;
+
+
 }
 
 .cardsholder-container {
     padding: 20px 0;
     gap: 20px;
-
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+
 
 }

@@ -26,7 +26,11 @@ const MainSection = () => {
   //   (a, b) => new Date(b.updatedDate) - new Date(a.updatedDate)
   // );
 
-  const sortedNotes = useContext(DataContext);
+  const { data, selectedTag } = useContext(DataContext);
+
+  const filteredNotes = selectedTag
+    ? data.filter((note) => note.tags.includes(selectedTag))
+    : data;
 
   return (
     <div className="mainsection-container">
@@ -34,7 +38,7 @@ const MainSection = () => {
         <TakeNote />
       </div>
       <div className="cardsholder-container">
-        {sortedNotes.map((note) => (
+        {filteredNotes.map((note) => (
           <Cards key={note.id} note={note} />
         ))}
       </div>

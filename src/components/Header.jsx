@@ -3,7 +3,7 @@ import "./Header.css";
 import noteslogo from "../assets/noteslogo.png";
 import { useState } from "react";
 
-const Header = () => {
+const Header = ({ onToggleNav }) => {
   const [searchQuery, setSearchQuery] = useState("");
 
   const handleSearchChange = (event) => {
@@ -14,12 +14,13 @@ const Header = () => {
     event.preventDefault();
     // Handle the search query here, such as making an API call
     console.log("Search Query:", searchQuery);
+    // console.log(toggleMenu);
   };
 
   return (
     <div className="header">
       <div className="menubox">
-        <i className="fa-solid fa-bars fa-2x"></i>
+        <i onClick={onToggleNav} className="fa-solid fa-bars fa-2x"></i>
       </div>
 
       <div className="logobox">
