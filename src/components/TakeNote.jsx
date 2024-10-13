@@ -20,6 +20,7 @@ const TakeNote = () => {
   const [toggleTaglist, setToggleTaglist] = useState(false);
 
   const tagContainerRef = useRef(null);
+  const toggleButtonRef = useRef(null); // Ref for the toggle button
 
   const colors = [
     "rgba(173, 216, 230, 1)",
@@ -41,9 +42,12 @@ const TakeNote = () => {
   // Event listener to close the tag container when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
+      // Check if click is outside both the tag container and the toggle button
       if (
         tagContainerRef.current &&
-        !tagContainerRef.current.contains(event.target)
+        !tagContainerRef.current.contains(event.target) &&
+        toggleButtonRef.current &&
+        !toggleButtonRef.current.contains(event.target) // Don't close if the button itself is clicked
       ) {
         setToggleTaglist(false);
       }
@@ -53,7 +57,7 @@ const TakeNote = () => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [tagContainerRef]);
+  }, [tagContainerRef, toggleButtonRef]);
 
   const handleTitleChange = (event) => {
     setTitle(event.target.value);
@@ -108,7 +112,8 @@ const TakeNote = () => {
   };
 
   const handleAddTagButton = (event) => {
-    setToggleTaglist((prevState) => !prevState);
+    event.preventDefault();
+    setToggleTaglist((prevState) => !prevState); // Toggle the tag list visibility
   };
 
   const handleNewTagEnter = (event) => {

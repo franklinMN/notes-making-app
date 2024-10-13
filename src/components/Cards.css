@@ -7,6 +7,16 @@
     flex-direction: column;
 }
 
+
+.card:hover {
+    transform: scale(1.05, 1.05);
+    /* Slightly increase the scale */
+    transition: transform 0.3s ease;
+    /* Smooth transition effect */
+    cursor: pointer;
+}
+
+
 .tags-container {
     display: flex;
     /* Use flexbox for alignment */

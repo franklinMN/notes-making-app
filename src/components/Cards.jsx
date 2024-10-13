@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useRef } from "react";
 import "./Cards.css";
 
-const Cards = ({ note }) => {
+const Cards = ({ note, onEditClick }) => {
   const titleRef = useRef(null);
   const notesRef = useRef(null);
 
@@ -19,7 +19,11 @@ const Cards = ({ note }) => {
   }, [note.title, note.notes]); // Runs when note title or notes change
 
   return (
-    <div className="card" style={{ backgroundColor: note.cardBackgroundColor }}>
+    <div
+      className="card"
+      onClick={() => onEditClick(note)}
+      style={{ backgroundColor: note.cardBackgroundColor }}
+    >
       <h6>{note.title}</h6>
       <hr></hr>
       <p>{note.notes}</p>
